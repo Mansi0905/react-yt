@@ -13,6 +13,10 @@ const submitHandler =(e) =>
   e.preventDefault();
   
   const copyTask=[...task];
+
+  copyTask.push({title,details})
+  setTask(copyTask)
+  
   
 
   setTitle('');
@@ -54,7 +58,7 @@ setTitle(e.target.value);
        }}
         />
 
-        <button className='bg-white w-full outline-n text-black font-medium px-5 py-2 rounded'>Add Notes </button>
+        <button className='bg-white active:bg-gray-400 w-full outline-n text-black font-medium px-5 py-2 rounded'>Add Notes </button>
     
     </form>
 
@@ -62,12 +66,13 @@ setTitle(e.target.value);
 
       <h1 className='text-3xl font-bold '>Recent Notes</h1>
 
-     <div className='flex h-full overflow-auto  mt-5 gap-5 flex-wrap'>
+     <div className='flex h-full items-start justify-start overflow-auto  mt-5 gap-5 flex-wrap'>
 
-       <div className='h-52 w-40 rounded-2xl bg-white'></div>
-      <div className='h-52 w-40 rounded-2xl  bg-white'></div>
-      <div className='h-52 w-40 rounded-2xl  bg-white'></div>
-     
+       {task.map(function(elem,idx){
+        return <div key={idx} className='h-52 w-40 rounded-xl text-black p-4  bg-white'><h3 className='text-xl leading-tight font-bold' >{elem.title}</h3>
+        <p className='mt-2 leading-tight  font-medium text-gray-700'>{elem.details}</p>
+        </div>
+       })}
      
      </div>
 
