@@ -23,6 +23,15 @@ const submitHandler =(e) =>
   setDetails('')
 }
 
+const deleteNote=(idx)=>{
+  const copyTask = [...task];
+
+  copyTask.splice(idx,1)
+  setTask(copyTask);
+  
+  
+
+}
 
 
   return (
@@ -66,12 +75,20 @@ setTitle(e.target.value);
 
       <h1 className='text-3xl font-bold '>Recent Notes</h1>
 
-     <div className='flex h-full items-start justify-start overflow-auto  mt-5 gap-5 flex-wrap'>
+     <div className='flex h-[90%] items-start justify-start overflow-auto  mt-5 gap-5 flex-wrap'>
 
        {task.map(function(elem,idx){
-        return <div key={idx} className='h-52 w-40 rounded-xl text-black p-4  bg-white'><h3 className='text-xl leading-tight font-bold' >{elem.title}</h3>
-        <p className='mt-2 leading-tight  font-medium text-gray-700'>{elem.details}</p>
-        </div>
+        return <div key={idx} className=' flex justify-between items-start flex-col relative h-52 w-40 bg-cover rounded-xl text-black px-5 py-9  bg-[url("https://imgs.search.brave.com/vK1LL07CAx0Adj6xjuw4TwxCbiactFhjA-YOMvS01OY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzcv/MTUyLzY5NC9zbWFs/bC9zdGlja3ktbm90/ZS1wYXBlci1iYWNr/Z3JvdW5kLWZyZWUt/cG5nLnBuZw")]'>
+         <div>
+           <h3 className='text-xl leading-tight font-bold' >{elem.title}</h3>
+        <p className='mt-2 leading-tight  font-xs text-gray-700'>{elem.details}</p>
+       
+         </div>
+         <button onClick={()=>{
+          deleteNote(idx)
+
+         }} className='w-full cursor-pointer active:scale-95  py1 text-xs rounded font-bold bg-red-500 text-white'>Delete </button>
+          </div>
        })}
      
      </div>
