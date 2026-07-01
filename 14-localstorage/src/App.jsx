@@ -2,7 +2,7 @@ import React from 'react'
 
 const App = () => {
 
-const user = {
+const user = {      // OBJECT-FORM
   username:'mansi',
   age:90,
   city:'jaipur'
