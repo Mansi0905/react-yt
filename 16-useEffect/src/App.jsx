@@ -42,7 +42,7 @@ const App = () => {
   useEffect(function(){
     console.log('use effect is running...');
     
-  },[b,a])
+  },[a,b])  //* component did mount bbut only once beacuse of array dependency
 
   return(
     <div>
