@@ -16,3 +16,8 @@ button {
     
 
 }
+button:hover {
+    cursor: pointer;
+    background-color: #a70e0e;
+    border: 1px solid #0f9bca;
+}
