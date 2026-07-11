@@ -18,6 +18,8 @@ button {
 }
 button:hover {
     cursor: pointer;
-    background-color: #a70e0e;
+    background-color: #9f0ea7;
     border: 10px solid #0f9bca;
+    gap: 10px;
+    
 }
