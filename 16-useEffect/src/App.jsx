@@ -40,10 +40,15 @@ const App = () => {
    
   }
   useEffect(function(){
+    bChanging();
     console.log('use effect is running...');
     
-  },[a,b])  //* component did mount bbut only once beacuse of array dependency
-
+  },[b])  //* component did mount bbut only once beacuse of array dependency
+useEffect(function(){
+    aChanging();
+    console.log('use effect is running...');
+    
+  },[a])
   return(
     <div>
       <h1>A is {a}</h1>
@@ -60,7 +65,7 @@ const App = () => {
         onClick={()=>{
           setB(b-1)
         }}>
-        Change B
+        Change B 
         </button>
 
     </div>
@@ -68,3 +73,5 @@ const App = () => {
 }
 
 export default App
+
+//paginattion meaning is that we can show only 10 data at a time and then we can click on next button to see the next 10 data.
