@@ -17,7 +17,7 @@ const App = () => {
   if(userData.length > 0){
     printUserData=userData.map(function(elem,idx){
       return <div key={idx}>
-        <a href={elem.url}>
+        <a href={elem.url} target='_blank'>
           <div className='h-40 overflow-hidden w-44 rounded-xl bg-white'>
         <img className='h-full w-full object-cover' src={elem.download_url} alt="" />
       </div>
@@ -30,11 +30,7 @@ const App = () => {
   return (
     <div className='bg-black overflow-auto h-screen text-white'>
 
-      <button
-      onClick={getData}
-       className='bg-green-400 active:scale-95  mb-3 px-5 py-2 cursor-pointer text-black '>
-        GetData
-        </button>
+      
 
       <div className='flex flex-wrap gap-5'>
         {printUserData}
