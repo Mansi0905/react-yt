@@ -13,6 +13,8 @@ const App = () => {
   }
    
   useEffect(function(){
+    console.log("kokokokokok");
+    
     
   })
   
