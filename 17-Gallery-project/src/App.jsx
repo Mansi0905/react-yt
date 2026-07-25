@@ -5,22 +5,24 @@ const App = () => {
 
   const [userData, setUserData] = useState([]);
 
+  const [index, setIndex] = useState(1)
+
   const getData= async ()=>{
-    const response= await axios.get(' https://picsum.photos/v2/list?page=3&limit=20')
+    const response= await axios.get(`https://picsum.photos/v2/list?page=${index}&limit=10`)
 
     setUserData(response.data); 
      
   }
    
   useEffect(function(){
-    console.log("kokokokokok");
+    getData();
     
     
-  })
+  },[index])
   
 
 
-  let printUserData='no user available';
+  let printUserData=<h3 className='text-gray-400 text-xs'>No user available</h3>;
   if(userData.length > 0){
     printUserData=userData.map(function(elem,idx){
       return <div key={idx}>
@@ -38,14 +40,35 @@ const App = () => {
   return (
     <div className='bg-black overflow-auto h-screen text-white'>
 
-      
-
-      <div className='flex flex-wrap gap-5'>
+      <div className='flex flex-wrap p-2 gap-5'>
         {printUserData}
 
       </div>
 
+        <div className='flex justify-center items-center gap-6 p-4 '>
 
+          <button className='bg-amber-400 text-black rounded cursor-pointer active:scale-95 px-4 py-2 font-semibold'
+          onClick={()=>{
+            if(index > 1){
+           setIndex(index-1)
+           printUserData='Loading....'
+           setUserData([])
+            }
+          }}
+          >
+            Prev
+            </button>
+
+          <button className='bg-amber-400 text-black rounded cursor-pointer active:scale-95 px-4 py-2 font-semibold'
+          onClick={()=>{
+            setUserData([])
+          setIndex(index+1)
+          printUserData='Loading....'
+          }}
+          >
+            Next
+            </button>
+        </div>
     </div>
   )
 }
