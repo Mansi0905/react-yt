@@ -22,7 +22,7 @@ const App = () => {
   
 
 
-  let printUserData=<h3 className='text-gray-400 text-xs'>No user available</h3>;
+  let printUserData=<h3 className='text-gray-400 text-xs absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>loading...</h3>;
   if(userData.length > 0){
     printUserData=userData.map(function(elem,idx){
       return <div key={idx}>
