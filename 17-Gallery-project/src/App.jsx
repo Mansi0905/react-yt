@@ -37,10 +37,13 @@ const App = () => {
          </div>
     })
   }
-  return (
-    <div className='bg-black overflow-auto h-screen text-white'>
 
-      <div className='flex flex-wrap p-2 gap-5'>
+
+  return (
+    <div className='bg-black overflow-auto h-screen p-4 text-white'>
+      
+
+      <div className='flex gap-8 flex-wrap p-2'>
         {printUserData}
 
       </div>
