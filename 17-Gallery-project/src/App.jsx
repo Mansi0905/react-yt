@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Card from './components/Card';
 
 const App = () => {
 
@@ -22,18 +23,13 @@ const App = () => {
   
 
 
-  let printUserData=<h3 className='text-gray-400 text-xs absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>loading...</h3>;
+  let printUserData=<h3 className='text-gray-300 text-sm absolute top-1/2 left-1/2 font-semibold -translate-x-1/2 -translate-y-1/2'>Loading...</h3>;
   if(userData.length > 0){
     printUserData=userData.map(function(elem,idx){
       return <div key={idx}>
+        <Card elem= {elem}/>
         
-        <a href={elem.url} target='_blank'>
-          <div className='h-40 overflow-hidden w-44 rounded-xl bg-white'>
-        <img className='h-full w-full object-cover' src={elem.download_url} alt="" />
-      </div>
-      <h2 className='font-bold text-xl '>{elem.author}</h2>
-     
-        </a>
+       
          </div>
     })
   }
@@ -45,12 +41,11 @@ const App = () => {
 
       <div className='flex gap-8 flex-wrap p-2'>
         {printUserData}
+    </div>
+     <div className='flex justify-center items-center gap-6 p-4 '>
 
-      </div>
-
-        <div className='flex justify-center items-center gap-6 p-4 '>
-
-          <button className='bg-amber-400 text-black rounded cursor-pointer active:scale-95 px-4 py-2 font-semibold'
+          <button 
+          className='bg-amber-400 text-black rounded cursor-pointer active:scale-95 px-4 py-2 font-semibold'
           onClick={()=>{
             if(index > 1){
            setIndex(index-1)
@@ -62,6 +57,7 @@ const App = () => {
             Prev
             </button>
 
+<h4>Page {index}</h4>
           <button className='bg-amber-400 text-black rounded cursor-pointer active:scale-95 px-4 py-2 font-semibold'
           onClick={()=>{
             setUserData([])
@@ -72,6 +68,8 @@ const App = () => {
             Next
             </button>
         </div>
+
+       
     </div>
   )
 }
