@@ -45,7 +45,7 @@ const App = () => {
      <div className='flex justify-center items-center gap-6 p-4 '>
 
           <button 
-          
+          style={{opacity : index == 1? 0.5 : 1}}
           className='bg-amber-400 text-black rounded cursor-pointer active:scale-95 px-4 py-2 font-semibold'
           onClick={()=>{
             if(index > 1){
