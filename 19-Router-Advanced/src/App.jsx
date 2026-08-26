@@ -10,6 +10,7 @@ import Notfound from './pages/Notfound'
 import Men from './pages/Men'
 import Women from './pages/Women'
 import Kids from './Kids'
+import Courses from './pages/Courses' 
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/courses' element={<Courses/>}/>
 
         <Route path='/product' element={<Product/>}>
       <Route path='men' element={<Men/>}/>

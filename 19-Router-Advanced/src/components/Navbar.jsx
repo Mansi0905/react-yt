@@ -11,6 +11,7 @@ const Navbar = () => {
         <Link className='text-xl font-medium' to='/about'>About</Link>
         <Link className='text-xl font-medium' to='/contact'>Contact</Link>
         <Link className='text-xl font-medium' to='/product'>Product</Link>
+        <Link className='text-xl font-medium' to='/courses'>Courses</Link>
 
         
 
