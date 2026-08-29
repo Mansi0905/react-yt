@@ -11,6 +11,7 @@ import Men from './pages/Men'
 import Women from './pages/Women'
 import Kids from './Kids'
 import Courses from './pages/Courses' 
+import CourseDeatil from './components/CourseDeatil'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/courses' element={<Courses/>}/>
+        <Route path='/courses/:id' element={<CourseDeatil/>}/>
 
         <Route path='/product' element={<Product/>}>
       <Route path='men' element={<Men/>}/>
