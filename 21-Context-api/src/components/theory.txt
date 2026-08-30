@@ -1,0 +1,10 @@
+context api ke lie 3 chize chaiye=>
+
+1) context => context create krna
+
+2) Provider -> sbko kaam provide krna
+
+3)useContext => sab log  use kr payenge
+
+
+context api ke data se poore app ko wrap kr dete hai . jab bhi data chaiye hum use easily access kr skte hai 
