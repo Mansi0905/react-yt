@@ -2,9 +2,17 @@ context api ke lie 3 chize chaiye=>
 
 1) context => context create krna
 
-2) Provider -> sbko kaam provide krna
+2) Provider -> sbko kaam provide krna // data provide krna
 
-3)useContext => sab log  use kr payenge
+3)useContext => sab log  use kr payenge // data use kro
 
 
 context api ke data se poore app ko wrap kr dete hai . jab bhi data chaiye hum use easily access kr skte hai 
+
+
+
+createContext() se humne humara context banaya
+
+<postmaxte.provider> se humne use value provide kri
+
+useContext se fir humne use huamre app me use kra.

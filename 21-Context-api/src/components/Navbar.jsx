@@ -1,13 +1,17 @@
 import React from 'react'
 import Navbar2 from './Navbar2'
+import { useContext } from 'react'
+import { ThemeDataContext } from '../context/ThemeContext'
 
-const Navbar = (props) => {
-    console.log(props.children);
+const Navbar = () => {
+   
+     
+const [theme]=useContext(ThemeDataContext)
     
   return (
-    <div className='nav'>
+    <div className={theme}>
         <h2>Rajasthali</h2>
-        <Navbar2 theme={props.theme}/>
+        <Navbar2 />
     </div>
   )
 }

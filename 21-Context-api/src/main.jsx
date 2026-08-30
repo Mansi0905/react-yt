@@ -6,6 +6,8 @@ import ThemeContext from './context/ThemeContext.jsx'
 
 createRoot(document.getElementById('root')).render(
  
-  <App/>
+  <ThemeContext>
+      <App />
+  </ThemeContext>
   
 )
