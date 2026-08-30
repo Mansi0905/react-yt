@@ -12,7 +12,7 @@ const Navbar2 = () => {
         navigate('/')
        }}
         className='bg-amber-600 px-5 py-2 rounded m-2 cursor-pointer active:scale-95'>
-          return homepage
+          Return to Homepage
           </button>
 
           <button
